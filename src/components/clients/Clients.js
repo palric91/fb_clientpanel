@@ -81,7 +81,12 @@ class Clients extends Component {
     return (
       <img
         src={logo}
-        style={{ width: "50px", margin: "auto", display: "block" }}
+        style={{
+          width: "50px",
+          height: "50px",
+          margin: "auto",
+          display: "block"
+        }}
         alt="logo"
       />
     );
@@ -94,7 +99,7 @@ Clients.propTypes = {
 };
 
 export default compose(
-  firestoreConnect([{collection: "clients"}]),
+  firestoreConnect([{ collection: "clients" }]),
   connect((state, props) => ({
     clients: state.firestore.ordered.clients
   }))
